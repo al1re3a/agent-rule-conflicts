@@ -1,0 +1,21 @@
+name: Agent Rule Conflicts
+description: Detect contradictory AI coding-agent instructions in a repository.
+branding:
+  icon: alert-triangle
+  color: purple
+inputs:
+  path:
+    description: Repository path to scan.
+    required: false
+    default: .
+  fail-on:
+    description: Failure threshold (any, high, or never).
+    required: false
+    default: high
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: python -m pip install "${{ github.action_path }}"
+    - shell: bash
+      run: agent-rule-conflicts "${{ inputs.path }}" --fail-on "${{ inputs.fail-on }}"

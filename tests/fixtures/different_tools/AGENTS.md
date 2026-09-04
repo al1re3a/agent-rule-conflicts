@@ -1,0 +1,1 @@
+Always run `pytest`.
