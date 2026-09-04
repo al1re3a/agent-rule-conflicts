@@ -113,13 +113,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - uses: al1re3a/agent-rule-conflicts@main
+      - uses: al1re3a/agent-rule-conflicts@v0.1.0
         with:
           fail-on: high
 ```
 
-For stable production workflows, pin a released tag or full commit SHA instead
-of `main`.
+For the strongest supply-chain guarantee, pin the full commit SHA instead of a
+movable tag.
 
 ## Detection model
 
