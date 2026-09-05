@@ -1,19 +1,100 @@
+<!-- readme-refresh:start -->
 <p align="center">
-  <img src="docs/hero.png" alt="Several instruction files converge on a detected conflict and one resolved rule" width="100%">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/readme-banner.png">
+    <source media="(prefers-color-scheme: light)" srcset="assets/readme-banner.png">
+    <img alt="Agent Rule Conflicts project banner" src="assets/readme-banner.png" width="100%">
+  </picture>
 </p>
 
-<h1 align="center">Agent Rule Conflicts</h1>
+<h1 align="center">🧭 Agent Rule Conflicts</h1>
 
-<p align="center">
-  Catch contradictory AI coding-agent instructions before your agents do.
-</p>
+<p align="center"><strong>Detect contradictory coding-agent instructions before they reach your agents.</strong></p>
 
 <p align="center">
   <a href="https://github.com/al1re3a/agent-rule-conflicts/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/al1re3a/agent-rule-conflicts/actions/workflows/ci.yml/badge.svg"></a>
-  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-22c55e.svg"></a>
-  <img alt="Python 3.10+" src="https://img.shields.io/badge/python-3.10%2B-38bdf8.svg">
-  <img alt="Zero runtime dependencies" src="https://img.shields.io/badge/runtime_dependencies-0-f59e0b.svg">
+  <a href="https://www.python.org/"><img alt="Python" src="https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white"></a>
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-fbbf24.svg"></a>
+  <a href="https://github.com/al1re3a/agent-rule-conflicts/releases"><img alt="Release" src="https://img.shields.io/github/v/release/al1re3a/agent-rule-conflicts?display_name=tag&sort=semver"></a>
+  <a href="https://github.com/al1re3a/agent-rule-conflicts/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/al1re3a/agent-rule-conflicts?style=flat&color=8b5cf6"></a>
+  <a href="https://github.com/al1re3a/agent-rule-conflicts/issues"><img alt="Open issues" src="https://img.shields.io/github/issues/al1re3a/agent-rule-conflicts?style=flat&color=06b6d4"></a>
 </p>
+
+<p align="center">
+  <a href="https://github.com/al1re3a/agent-rule-conflicts"><img alt="Source" src="https://img.shields.io/badge/Source-open-111827?style=for-the-badge&logo=github&logoColor=white"></a>
+  <a href="#quick-start"><img alt="Quick Start" src="https://img.shields.io/badge/Quick_Start-open-0f766e?style=for-the-badge&logo=gnubash&logoColor=white"></a>
+  <a href="CONTRIBUTING.md"><img alt="Contribute" src="https://img.shields.io/badge/Contribute-open-7c3aed?style=for-the-badge&logo=github&logoColor=white"></a>
+  <a href="SECURITY.md"><img alt="Security" src="https://img.shields.io/badge/Security-open-b91c1c?style=for-the-badge&logo=securityscorecard&logoColor=white"></a>
+</p>
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=python,githubactions" alt="Python and GitHub Actions" height="42">
+</p>
+
+> [!NOTE]
+> The scanner is offline and deterministic. Its results are focused on explicit English requirements and prohibitions; review the documented detection scope before enforcing it in CI.
+
+## 📑 Contents
+
+- [At a glance](#-at-a-glance)
+- [Why this exists](#why-this-exists)
+- [Quick start](#quick-start)
+- [Supported instruction files](#supported-instruction-files)
+- [Output formats](#output-formats)
+- [GitHub Actions](#github-actions)
+- [Detection model](#detection-model)
+
+---
+
+## 🔎 At a glance
+
+| | |
+|---|---|
+| **Purpose** | Detect contradictory AI coding-agent instructions before they reach your agents — offline, deterministic, SARIF-ready. |
+| **Input** | Agent instruction files |
+| **Output** | Text, JSON, or SARIF |
+| **Runtime** | Python 3.10+ |
+| **CI** | ✅ Linux |
+| **Status** | ✅ Maintained |
+
+<details>
+<summary><strong>🧭 How it works</strong></summary>
+
+```mermaid
+flowchart LR
+    A["Agent instruction files"] --> B["Detect conflicts"]
+    B --> C["Text, JSON, or SARIF"]
+```
+
+</details>
+
+<details>
+<summary><strong>📁 Repository layout</strong></summary>
+
+```text
+agent-rule-conflicts/
+├── .github/
+├── src/
+├── tests/
+├── examples/
+├── docs/
+├── pyproject.toml
+├── action.yml
+└── README.md
+```
+
+</details>
+
+<details>
+<summary><strong>🤝 Contributors</strong></summary>
+
+<br>
+<a href="https://github.com/al1re3a/agent-rule-conflicts/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=al1re3a/agent-rule-conflicts" alt="Contributors">
+</a>
+
+</details>
+<!-- readme-refresh:end -->
 
 An `AGENTS.md` says “always run `pytest`.” A nested `CLAUDE.md` says
 “never run `pytest`.” Both look reasonable in isolation; together they make agent
